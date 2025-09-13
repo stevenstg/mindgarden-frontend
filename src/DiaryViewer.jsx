@@ -1,5 +1,5 @@
 // src/DiaryViewer.jsx
-import React from 'react';
+import React, { useState } from 'react';
 
 function DiaryEditor({ onSave, initialContent = '' }) {
   const [content, setContent] = React.useState(initialContent);
