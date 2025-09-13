@@ -105,7 +105,6 @@ function App() {
         <DiaryViewer 
           diary={selectedDiary} 
           onSaveDiary={handleSaveDiary} 
-          onAnalysisComplete={handleAnalysisUpdate} 
         />
       </main>
     </div>
