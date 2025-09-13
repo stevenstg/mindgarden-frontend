@@ -2,9 +2,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Sidebar } from './Sidebar';
 import { DiaryViewer } from './DiaryViewer';
+import { API_URL } from './config.js'; // <--- 添加这一行
 import './App.css';
-
-const API_URL = "http://127.0.0.1:8000"; // 你的后端地址
 
 function App() {
   const [allDiaries, setAllDiaries] = useState([]);

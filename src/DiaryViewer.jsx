@@ -1,6 +1,6 @@
 // src/DiaryViewer.jsx
 import React, { useState } from 'react';
-
+import { API_URL } from './config.js'; 
 function DiaryEditor({ onSave, initialContent = '' }) {
   const [content, setContent] = React.useState(initialContent);
 
