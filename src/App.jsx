@@ -60,6 +60,12 @@ function App() {
       .catch(error => console.error("Error creating diary:", error));
   };
 
+  const handleAnalysisUpdate = (updatedDiary) => {
+    setAllDiaries(prevDiaries => 
+      prevDiaries.map(d => d.id === updatedDiary.id ? updatedDiary : d)
+    );
+  };
+
   const selectedDiary = allDiaries.find(d => d.id === selectedDiaryId);
 
   return (
@@ -71,7 +77,11 @@ function App() {
         onNewDiary={() => setSelectedDiaryId(null)} // 点击"写新日记"按钮，取消选中
       />
       <main className="main-content">
-        <DiaryViewer diary={selectedDiary} onSaveDiary={handleSaveDiary} />
+        <DiaryViewer 
+          diary={selectedDiary} 
+          onSaveDiary={handleSaveDiary} 
+          onAnalysisComplete={handleAnalysisUpdate} 
+        />
       </main>
     </div>
   );
