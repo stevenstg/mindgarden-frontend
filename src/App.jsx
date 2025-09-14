@@ -4,7 +4,7 @@ import { Sidebar } from './Sidebar';
 import { DiaryViewer } from './DiaryViewer';
 import { API_URL } from './config.js'; // <--- 添加这一行
 import './App.css';
-
+import { TrendChart } from './TrendChart.jsx';
 function extractDayNumberFromString(dateString) {
   const match = dateString.match(/Day(\d+)/);
   return match ? parseInt(match[1], 10) : 0;
@@ -102,6 +102,9 @@ function App() {
         onNewDiary={() => setSelectedDiaryId(null)} // 点击"写新日记"按钮，取消选中
       />
       <main className="main-content">
+        <div className="trends-section" style={{ marginBottom: '40px' }}>
+        <TrendChart diaries={allDiaries} />
+        </div>
         <DiaryViewer 
           diary={selectedDiary} 
           onSaveDiary={handleSaveDiary} 
@@ -112,3 +115,4 @@ function App() {
 }
 
 export default App;
+
